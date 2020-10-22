@@ -30,7 +30,6 @@ class SensorFactory(GstRtspServer.RTSPMediaFactory):
                              '! rtph264pay config-interval=1 name=pay0 pt=96'
         print(self.launch_string)
 
-        self.detector = MinerTopDectector(window_size=5, threshold=0.25, stablizer_size=3, equalizer_in=False, equalizer_out=True, blogging=False)
 
     def on_need_data(self, src, lenght):
         if self.cap.isOpened():
